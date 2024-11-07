@@ -16,7 +16,7 @@ namespace Mars_Onboarding_Specflow.StepDefinitions
     {
         private static IWebElement popupmsg => driver.FindElement(By.XPath("//div[@class='ns-box-inner']"));
         string popupMsgInv = "Please enter skill and experience level";
-        string popMsgSame = "This skill is already added to your skill list.";
+        string popMsgSame = "This skill is already added to your skills list.";
         string popMsgDup = "Duplicated data";
         string popMsgUndefined = "undefined";
         [Given(@"User logs into Mars Portal")]
