@@ -13,7 +13,7 @@ Examples:
 	| Or++**123on   | Beginner           |
 	|               | Choose Skill Level |
 	|               | Intermediate       |
-	| Dance			| Expert             |
+	| Music			| Expert             |
 Scenario Outline: User able to edit the Skills
 	Given User logs into Mars Portal
 	And navigates to Skills tab in Profile Page
