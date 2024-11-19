@@ -22,10 +22,13 @@ namespace Mars_Onboarding_Specflow.Pages
 
         public void AddLanguage(string language, string level)
         {
+            //Adding the Language
             addNewButton.Click();
             Thread.Sleep(3000);
+            //Entering the Language
             langTexbox.SendKeys(language);
             selectDropdown.Click();
+            //Selecting the Level
             selectDropdown.SendKeys(level);
             Thread.Sleep(3000);
             langAddButton.Click();
