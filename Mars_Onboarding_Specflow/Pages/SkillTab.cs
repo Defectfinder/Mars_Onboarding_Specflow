@@ -22,6 +22,20 @@ namespace Mars_Onboarding_Specflow.Pages
         private static IWebElement selectSkillTab => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[2]"));
         private static IWebElement deleteSkillIcon => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[1]/tr/td[3]/span[2]/i"));
 
+        public void ClearData()
+        {
+            try
+            {
+                var deleteButton = driver.FindElements(By.CssSelector("i[class='remove icon']"));
+                foreach (var button in deleteButton)
+                {
+                    button.Click();
+                }
+            }
+            catch { }
+
+        }
+
         public void AddSkill(string skill, string skillLevel)
         {
             // Select the Skill Tab

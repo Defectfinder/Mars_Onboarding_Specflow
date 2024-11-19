@@ -39,6 +39,7 @@ namespace Mars_Onboarding_Specflow.StepDefinitions
         public void WhenUserEntersSkillAndSkillLevel(string skill, string skilllevel)
         {
             SkillTab skillTabObj = new SkillTab();
+            skillTabObj.ClearData();
             skillTabObj.AddSkill(skill,skilllevel);
         }
 

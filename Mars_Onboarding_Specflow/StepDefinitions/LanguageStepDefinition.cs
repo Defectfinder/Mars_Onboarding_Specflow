@@ -43,6 +43,7 @@ namespace Mars_Onboarding_Specflow.StepDefinitions
         public void WhenUserEntersLanguageAndLanguageLevel(string language, string level)
         {
             LanguageTab langTabObj = new LanguageTab();
+            langTabObj.ClearData();
             langTabObj.AddLanguage(language,level);
         }
 
