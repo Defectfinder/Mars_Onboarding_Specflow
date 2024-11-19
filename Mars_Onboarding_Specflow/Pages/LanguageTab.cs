@@ -20,12 +20,33 @@ namespace Mars_Onboarding_Specflow.Pages
         private static IWebElement updateButton => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody[1]/tr/td/div/span/input[1]"));
         private static IWebElement deleteIcon => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody[1]/tr/td[3]/span[2]/i"));
 
-        public void AddLanguage(string language, string level)
+
+        public void ClearData()
         {
+            try
+            {
+                var deleteButton = driver.FindElements(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[3]/span[2]/i"));
+                foreach (var button in deleteButton)
+                {
+                    button.Click();
+                }
+            }
+            catch (NoSuchElementException)
+            {
+                Console.WriteLine("Nothing to delete");
+            }
+        }
+
+
+            public void AddLanguage(string language, string level)
+        {
+            //Adding the Language
             addNewButton.Click();
             Thread.Sleep(3000);
+            //Entering the Language
             langTexbox.SendKeys(language);
             selectDropdown.Click();
+            //Selecting the Level
             selectDropdown.SendKeys(level);
             Thread.Sleep(3000);
             langAddButton.Click();
